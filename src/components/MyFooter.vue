@@ -2,6 +2,7 @@
     <footer>
       <h6>Copyright © 2023 百日梦想家</h6>
       <h5>挣钱钱，吃大餐，各地游玩耶耶耶！</h5>
+      <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span> -->
     </footer>
 </template>
 
@@ -14,6 +15,7 @@
 <style scoped>
   footer{
     box-sizing: border-box;
+    background-color: var(--white);
     height: 9.375rem;
     padding: 3.125rem;
   }

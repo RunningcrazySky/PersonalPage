@@ -7,9 +7,17 @@
     box-sizing: border-box;
 }
 
+html, body{
+    height: 100%;
+    background-color: var(--gray);
+
+}
 :root {
     --main-bg-color:#F4C8D8;
     --main-font-color:#E793B4;
+    --black:#000;
+    --white:#fff;
+    --gray:#fafafa
 }
 
 html {
@@ -20,6 +28,13 @@ a {
     color: #333;
 }
 
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
 .clearfix::after {
     content: '';
     height: 0;
@@ -33,5 +48,33 @@ a {
 }
 
 .container {
-    margin: 0 auto;
+    width: 82.5rem;
+    min-height: 50rem;
+    margin: 6.25rem auto 0;
+    padding: .625rem 0;
+    text-align: center;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* background-color: yellow; */
 }
+
+.row1{
+    line-height: 1.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+}
+.row2{
+    -webkit-line-clamp: 2;
+    max-height: 3rem;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+  }
