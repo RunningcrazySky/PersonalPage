@@ -1,10 +1,10 @@
 <template>
     <!-- list 开头 -->
-    <div class="list-item">
+    <div class="HomeArticle">
         <!-- list 标题 -->
         <div class="item-hd">
             <h3 class="title">
-                <a href="#" target="_blank">标题</a>
+                <router-link to="blogs">标题</router-link>
             </h3>
             <div class="tag">
                 <span>标签</span>
@@ -19,15 +19,11 @@
             <div class="item-ft">
                 <div class="left">
                     <span>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-gongkai"></use>
-                        </svg>
+                        <i class="iconfont icon-gongkai"></i>
                         0
                     </span>
                     <span>
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-dianzan"></use>
-                        </svg>
+                        <i class="iconfont icon-dianzan"></i>
                         0
                     </span>
                 </div>
@@ -41,13 +37,18 @@
 </template>
 
 <script>
+import MyBlogs from '@/views/MyBlogs.vue'
     export default {
-        name:'ListItem',
+        name:'HomeArticle',
+        components:{
+            MyBlogs,
+        }
     }
 </script>
 
 <style scoped lang='less'>
-    .list-item{
+    .HomeArticle{
+        background-color: var(--white);
         min-height: 1.875rem;
         padding: 1rem;
         border-top: 1px solid var(--gray);
@@ -57,6 +58,7 @@
             align-items: center;
             .title{
                 font-weight: 400;
+                letter-spacing: .0625rem;
                 & a:hover {
                     color: var(--main-font-color);
                 }
@@ -78,11 +80,14 @@
                 font-weight: 400;
             }
             .item-ft{
-                text-align: left;
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 margin-top: .5rem;
                 .left span{
+                    margin: 0 .625rem;
+                }
+                .right{
+                    text-align: right;
                     margin: 0 .625rem;
                 }
             }

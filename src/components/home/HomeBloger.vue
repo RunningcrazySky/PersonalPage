@@ -1,5 +1,5 @@
 <template>
-    <div class="aside-info">
+    <div class="HomeBloger">
         <div class="hd">
             <img src="@/assets/img/profile.jpg" alt="">
             <div class="info">
@@ -15,12 +15,12 @@
 
 <script>
     export default {
-        name:'AsideInfo',
+        name:'HomeBloger',
     }
 </script>
 
 <style scoped lang='less'>
-  .aside-info{
+  .HomeBloger{
     height: 13.75rem;
     background-color: var(--white);
     margin-bottom: .625rem;
@@ -40,6 +40,7 @@
             padding-right: 2.5rem;
             a{
                 font-weight: 600;
+                letter-spacing: .125rem;
                 &:hover{
                     color: var(--main-font-color);
                     cursor: pointer;

@@ -55,9 +55,16 @@ a {
     text-align: center;
     border-radius: 5px;
     box-sizing: border-box;
-    /* background-color: yellow; */
+}
+.container .left{
+    flex:3;
+    margin-right: .625rem;
+  }
+.container .right{
+    flex: 1;
 }
 
+/* 多行省略号 */
 .row1{
     line-height: 1.5rem;
     overflow: hidden;

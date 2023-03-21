@@ -9,11 +9,11 @@
             <router-link to="/article">
               <h3>文库</h3>
             </router-link>
-            <router-link to="/friends">
-              <h3>社交</h3>
-            </router-link>
             <router-link to="/entertainment">
               <h3>休闲</h3>
+            </router-link>
+            <router-link to="/friends">
+              <h3>社交</h3>
             </router-link>
             <router-link to="/about">
               <h3>关于</h3>

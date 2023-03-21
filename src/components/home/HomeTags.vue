@@ -1,5 +1,5 @@
 <template>
-    <div class="list-header">
+    <div class="HomeTags">
         <ul>
             <li>全部标签</li>
             <li>标签1</li>
@@ -11,12 +11,13 @@
 
 <script>
     export default {
-        name:'ListHeader',
+        name:'HomeTags',
     }
 </script>
 
 <style scoped lang='less'>
-  .list-header{
+  .HomeTags{
+    background-color: var(--white);
     border-bottom: 1px solid var(--gray);
     ul{
       display: flex;
@@ -24,6 +25,7 @@
       li{
         width: 70px;
         margin: 0 1rem;
+        letter-spacing: .0625rem;
         cursor: pointer;
         &:hover{
           font-weight: bold;

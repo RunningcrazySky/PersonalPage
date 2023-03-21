@@ -1,7 +1,7 @@
 <template>
-    <div class="aside-item">
+    <div class="HomeLinks">
         <div class="hd">
-           <h3>标题</h3>
+           <h4>奇妙链接</h4>
         </div>
         <div class="bd">
             内容
@@ -11,12 +11,12 @@
 
 <script>
     export default {
-        name:'AsideItem',
+        name:'HomeLinks',
     }
 </script>
 
 <style scoped lang='less'>
-  .aside-item{
+  .HomeLinks{
     min-height: 18.75rem;
     background-color: var(--white);
     text-align: left;
@@ -26,12 +26,14 @@
         line-height: 3.75rem;
         border-bottom: 2px solid var(--gray);
         padding-left: 1rem;
-        h3{
+        h4{
             font-weight: 400;
+            letter-spacing: .0625rem;
         }
     }
     .bd{
         padding: 1rem;
+        font-size: .875rem;
     }
   }
 </style>
