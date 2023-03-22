@@ -61,7 +61,10 @@ a {
     margin-right: .625rem;
   }
 .container .right{
+    height: 100%;
     flex: 1;
+    position: sticky;
+    top: 6.25rem;
 }
 
 /* 多行省略号 */

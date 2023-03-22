@@ -1,12 +1,16 @@
 <template>
-  <div class="container">
-    娱乐
+  <div class="MyArticle">
+    <MyArticle/>
   </div>
 </template>
 
 <script>
+import MyArticle from './MyArticle'
     export default {
         name:'MyEntertainment',
+        components:{
+          MyArticle
+        }
     }
 </script>
 

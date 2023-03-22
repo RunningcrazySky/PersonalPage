@@ -9,6 +9,7 @@
       <!-- 侧边栏 -->
       <div class="right">
         <HomeBloger/>
+        <HomeContacts/>
         <HomeLinks/>
       </div>
   </div>
@@ -19,6 +20,7 @@ import HomeTags from'@/components/home/HomeTags.vue'
 import HomeArticle from'@/components/home/HomeArticle.vue'
 import HomeLinks from'@/components/home/HomeLinks.vue'
 import HomeBloger from'@/components/home/HomeBloger.vue'
+import HomeContacts from '../components/home/HomeContacts'
     export default {
       name:'MyHome',
       components:{
@@ -26,6 +28,7 @@ import HomeBloger from'@/components/home/HomeBloger.vue'
         HomeArticle,
         HomeLinks,
         HomeBloger,
+        HomeContacts
       }
     }
 </script>
