@@ -30,6 +30,11 @@
                         </button>
                     </a>
                 </li>
+                <li>
+                    <a href="https://qrbtf.com/" target="_blank">
+                        <img src="@/assets/img/qrbtf.png" alt="" class="qrcode">
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
@@ -82,6 +87,13 @@
                 color: rgb(255, 223, 0);
                 letter-spacing: .125rem;
                 background-color: rgb(15,17,23);
+            }
+            .qrcode{
+                display: inline-block;
+                height: 2rem;
+                color: var(--white);
+                background-color: var(--black);
+                border-radius: 2rem;
             }
         }   
     }

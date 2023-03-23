@@ -20,10 +20,10 @@
             </router-link>
         </div>
         <!-- 后台登录入口 -->
-        <div class="right">
+        <router-link to="/backend" class="right">
           <img src="@/assets/img/profile.jpg" alt="岛主">
           <span>私人重地</span>
-        </div>
+        </router-link>
     </header>
 </template>
 
@@ -86,6 +86,7 @@
       span{
         line-height: 6.25rem;
         color: var(--white);
+        font-weight: 600;
         cursor: pointer;
         &:hover{
           color: var(--black);

@@ -35,6 +35,11 @@ const routes = [
     name: 'blogs',
     component: () => import('../views/MyBlogs.vue')
   },
+  {
+    path: '/backend',
+    name: 'backend',
+    component: () => import('../views/backend/MyBackEnd.vue')
+  },
 ]
 
 const router = new VueRouter({
