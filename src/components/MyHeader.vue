@@ -1,5 +1,5 @@
 <template>
-    <header class="clearfix">
+    <header>
         <!-- 左侧首页链接 -->
         <router-link to="/" class="left">
             <div><img src="@/assets/img/dreamer.png" alt=""></div>
@@ -18,6 +18,11 @@
             <router-link to="/about">
               <h3>关于</h3>
             </router-link>
+        </div>
+        <!-- 后台登录入口 -->
+        <div class="right">
+          <img src="@/assets/img/profile.jpg" alt="岛主">
+          <span>私人重地</span>
         </div>
     </header>
 </template>
@@ -40,35 +45,53 @@
     height: 6.25rem;
     background-color: var(--main-bg-color);
     z-index: 1;
-  }
-  header .left{
+    .left{
     display: inline-block;
-    div{
-      height: 6.25rem;
-      overflow: hidden;
+      div{
+        height: 6.25rem;
+        overflow: hidden;
+      }
+      img{
+        width: 18.75rem;
+        margin-top: -6.25rem;
+      }
     }
-    img{
-      width: 18.75rem;
-      margin-top: -6.25rem;
-    }
-  }
-  header .center{
+    .center{
     display: flex;
     justify-content: center;
-    a{
-        padding: 2.5rem;
-        letter-spacing: .1875rem;
-        color: var(--black);
-        h3{
-          display: inline-block;
-          background-color: var(--white);
-          padding: .3125rem .9375rem;
-          border-radius: 3px;
+      a{
+          padding: 2.5rem;
+          letter-spacing: .1875rem;
+          color: var(--black);
+          h3{
+            display: inline-block;
+            background-color: var(--white);
+            padding: .3125rem .9375rem;
+            border-radius: 3px;
+          }
+          h3:hover{
+            background-color: var(--black);
+            color: var(--white);
+          }
+      }
+    }
+    .right{
+      padding: 3.125rem;
+      img{
+        width: 3.125rem;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 1.25rem;
+      }
+      span{
+        line-height: 6.25rem;
+        color: var(--white);
+        cursor: pointer;
+        &:hover{
+          color: var(--black);
+          text-shadow: 2px 2px 3px var(--white);
         }
-        h3:hover{
-          background-color: var(--black);
-          color: var(--white);
-        }
+      }
     }
   }
 </style>
