@@ -1,20 +1,28 @@
 <template>
-  <div class="container">
-    <div class="left">
-        <ArticleContent/>
-    </div>
-    <div class="right">
-        <ArticleHot/>
-    </div>
-    </div>
+  <div>
+    <MyHeader/>
+      <div class="container">
+            <div class="left">
+                <ArticleContent/>
+            </div>
+            <div class="right">
+                <ArticleHot/>
+            </div>
+        </div>
+    <MyFooter/>
+  </div>
 </template>
 
 <script>
+import MyHeader from '@/components/MyHeader'
+import MyFooter from '@/components/MyFooter'
 import ArticleContent from '../components/article/ArticleContent'
 import ArticleHot from '../components/article/ArticleHot'
 export default {
     name:'MyBlogs',
     components:{
+        MyHeader,
+        MyFooter,
         ArticleContent,
         ArticleHot,
     }
