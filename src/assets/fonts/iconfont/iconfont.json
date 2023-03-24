@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "716015",
+      "name": "退出",
+      "font_class": "tuichu1",
+      "unicode": "e63b",
+      "unicode_decimal": 58939
+    },
+    {
+      "icon_id": "26847655",
+      "name": "退出",
+      "font_class": "tuichu3",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
       "icon_id": "400807",
       "name": "github3",
       "font_class": "github3",
