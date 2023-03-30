@@ -6,39 +6,66 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'MyHome',
     // 懒加载
-    component: () => import('../views/MyHome')
+    component: () => import('../views/MyHome'),
   },
   {
     path: '/article',
-    name: 'article',
+    name: 'MyArticle',
     component: () => import('../views/MyArticle.vue')
   },
   {
     path: '/friends',
-    name: 'friends',
+    name: 'MyFriends',
     component: () => import('../views/MyFriends.vue')
   },
   {
-    path: '/entertainment',
-    name: 'entertainment',
-    component: () => import('../views/MyEntertainment.vue')
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import('../views/MyAbout.vue')
-  },
-  {
     path: '/blogs',
-    name: 'blogs',
+    name: 'MyBlogs',
     component: () => import('../views/MyBlogs.vue')
   },
+  // 后台路由
   {
     path: '/backend',
-    name: 'backend',
-    component: () => import('../views/backend/MyBackEnd.vue')
+    // 重定向
+    redirect: '/backend/behome',
+    name: 'MyBackEnd',
+    component: () => import('../views/backend/MyBackEnd.vue'),
+    children: [
+      {
+        path:'behome',
+        name:'BeHome',
+        component: () => import('../views/backend/BeHome.vue')
+      },
+      {
+        path:'articleall',
+        name:'BeArticleAll',
+        component: () => import('../views/backend/BeArticleAll.vue')
+      },
+      {
+        path:'articlepub',
+        name:'BeArticlePub',
+        component: () => import('../views/backend/BeArticlePub.vue')
+      },
+      {
+        path:'articlesort',
+        name:'BeArticleSort',
+        component: () => import('../views/backend/BeArticleSort.vue')
+      },
+      {
+        path:'comments',
+        name:'BeComment',
+        component: () => import('../views/backend/BeComment.vue')
+      },
+      {
+        path:'set',
+        name:'BeSet',
+        component: () => import('../views/backend/BeSet.vue')
+      },
+
+    ]
+    
   },
 ]
 

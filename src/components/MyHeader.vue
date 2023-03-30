@@ -7,29 +7,51 @@
         <!-- 中间跳转链接 -->
         <div class="center">
             <router-link to="/article">
-              <h3>文库</h3>
-            </router-link>
-            <router-link to="/entertainment">
-              <h3>休闲</h3>
+              <i class="iconfont icon-ziliaowenku"></i>
             </router-link>
             <router-link to="/friends">
-              <h3>社交</h3>
+              <i class="iconfont icon-shejiao"></i>
             </router-link>
-            <router-link to="/about">
-              <h3>关于</h3>
-            </router-link>
+            <a href="https://travellings.cn/go.html" target="_blank" >
+                <img src="@/assets/img/travelling.jpg" alt="">
+            </a>
         </div>
         <!-- 后台登录入口 -->
-        <router-link to="/backend" class="right">
-          <img src="@/assets/img/profile.jpg" alt="岛主">
-          <span>私人重地</span>
-        </router-link>
+        <div class="right">
+          <i class="iconfont icon-suo1"  @click="showLogin"></i>
+        </div>
+        <!-- 登录弹窗 -->
+        <div class="login-box" v-if="loginVisible">
+          <form class="login">
+            <input type="text" placeholder="请输入账户" name="account" v-model.trim="username">
+            <input type="password" placeholder="请输入密码" name="password"  v-model.trim="password">
+            <button >登录</button>
+          </form>
+        </div>
     </header>
 </template>
 
 <script>
     export default {
         name:'MyHeader',
+        data(){
+          return {
+            loginVisible:false,
+            username:'',
+            password:'',
+            src:''
+          }
+        },
+        methods:{
+          showLogin(){
+            this.loginVisible = !this.loginVisible
+          },
+          // login(){
+          //   if(this.username === 'admin' && this.password === 123456){
+          //     // this.src = 'http://localhost:8080/backend'
+          //   }
+          // }
+        }
     }
 </script>
 
@@ -60,37 +82,75 @@
     display: flex;
     justify-content: center;
       a{
-          padding: 2.5rem;
-          letter-spacing: .1875rem;
-          color: var(--black);
-          h3{
-            display: inline-block;
-            background-color: var(--white);
-            padding: .3125rem .9375rem;
-            border-radius: 3px;
+        padding: 2.5rem;
+        color: var(--black);
+        i, img{
+          display: inline-block;
+          width: 2.1875rem;
+          height: 2.1875rem;
+          border-radius: 50%;
+          text-align: center;
+          line-height: 2.1875rem;
+          background-color: var(--white);
+          font-size: 1.25rem;
+          font-weight: 400;
+          &:hover{
+            box-shadow: 2px 1px 5px var(--black), 1px 1px 3px var(--black),-1px -1px 5px var(--white);
+            transition: linear .2s;
           }
-          h3:hover{
-            background-color: var(--black);
-            color: var(--white);
-          }
+        }
+        .icon-shejiao{
+          font-weight: 600;
+        }
       }
     }
     .right{
-      padding: 3.125rem;
-      img{
-        width: 3.125rem;
-        border-radius: 50%;
-        vertical-align: middle;
-        margin-right: 1.25rem;
-      }
-      span{
-        line-height: 6.25rem;
+      padding-right: 130px;
+      i{
+        width: 2.1875rem;
+        line-height: 2.1875rem;
+        font-size: 1.25rem;
         color: var(--white);
-        font-weight: 600;
+        &:hover{
+          cursor: pointer;
+          color: var(--black);
+          transition: linear .3s;
+          text-shadow: 
+          -2px -1px 2px var(--white), 
+          1px 1px 3px var(--white),
+          2px 1px 1px var(--black);
+        }
+      }
+    }
+  }
+  // 登录窗口
+  .login-box{
+    position: absolute;
+    right: 0;
+    top: 100px;
+    width: 260px;
+    .login{
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      background-color:rgba(244,200,216,.3);
+      border-radius: 5px;
+      input{
+        margin-bottom: 1rem;
+        font-size: .875rem;
+        padding: .3125rem .625rem;
+        border: 0;
+      }
+      button{
+        background: var(--white);
+        color: var(--main-font-color);
+        border: 0;
+        font-size: .875rem;
+        padding: .3125rem .625rem;
         cursor: pointer;
         &:hover{
-          color: var(--black);
-          text-shadow: 2px 2px 3px var(--white);
+          background: var(--main-font-color);
+          color:var(--white)
         }
       }
     }

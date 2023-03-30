@@ -6,6 +6,7 @@
         <div class="left">
           <HomeTags/>
           <HomeArticle/>
+          <HomeArticle/>
         </div>
         <!-- 侧边栏 -->
         <div class="right">

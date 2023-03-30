@@ -3,8 +3,13 @@
       <div class="copyright">Copyright©2023 百日梦想家</div>
       <div class="count">
       <!-- 点击量统计 -->
-        <span class="sum-count">本站访问量：<span id="busuanzi_value_site_pv">？</span>次</span>
-        <span class="person-count">本站访客数：<span id="busuanzi_value_site_uv">？</span>人</span>
+        <span class="sum-count">访问量:
+          <span id="busuanzi_value_site_pv">counting...</span>
+        </span>
+        <span class="divide">|</span>
+        <span class="person-count">访客数:
+          <span id="busuanzi_value_site_uv">counting...</span>
+        </span>
         <!-- 本文总阅读量<span id="busuanzi_value_page_pv"></span>次 -->
       </div>
     </footer>
@@ -24,18 +29,16 @@
     padding: 3.125rem;
     font-size: .875rem;
     font-weight: 600;
+    z-index: 1;
     .copyright{
       height: 40px;
       margin: 0 auto;
       text-align: center;
     }
     .count{
-      width: 500px;
-      height: 50px;
-      margin: 0 auto;
       text-align: center;
-      .sum-count{
-        margin-right: 1.25rem;
+      .divide{
+        padding: 0 10px;
       }
     }
   }

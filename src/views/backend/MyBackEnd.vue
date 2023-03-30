@@ -17,46 +17,64 @@
                 active-text-color="#fff"
                 @open="handleOpen"
                 @close="handleClose">
-                  <el-menu-item index="1">
-                    <i class="el-icon-s-home"></i>
-                    <span slot="title">主页</span>
-                  </el-menu-item>
+                  <router-link to="behome">
+                    <el-menu-item index="1">
+                      <i class="el-icon-s-home"></i>
+                      <span slot="title">主页</span>
+                    </el-menu-item>
+                  </router-link>
+
                   <el-submenu index="2">
                     <template slot="title">
                       <i class="el-icon-document"></i>
                       <span>文章</span>
                     </template>
                     <el-menu-item-group>
-                      <el-menu-item index="2-1">所有文章</el-menu-item>
-                      <el-menu-item index="2-2">发表文章</el-menu-item>
-                      <el-menu-item index="2-3">文章分类</el-menu-item>
+                      <router-link to="articleall">
+                        <el-menu-item index="2-1">所有文章</el-menu-item>
+                      </router-link>
+                      <router-link to="articlepub">
+                        <el-menu-item index="2-2">发表文章</el-menu-item>
+                      </router-link>
+                      <router-link to="articlesort">
+                        <el-menu-item index="2-3">文章分类</el-menu-item>
+                      </router-link>
                     </el-menu-item-group>
                   </el-submenu>
-                  <el-menu-item index="3">
-                    <i class="el-icon-s-comment"></i>
-                    <span slot="title">评论</span>
-                  </el-menu-item>
-                  <el-menu-item index="4">
-                    <i class="el-icon-user"></i>
-                    <span slot="title">用户</span>
-                  </el-menu-item>
-                  <el-menu-item index="5">
-                    <i class="el-icon-setting"></i>
-                    <span slot="title">设置</span>
-                </el-menu-item>
+
+                  <router-link to="comments">
+                    <el-menu-item index="3">
+                      <i class="el-icon-s-comment"></i>
+                      <span slot="title">评论</span>
+                    </el-menu-item>
+                  </router-link>
+
+                  <router-link to="set">
+                    <el-menu-item index="5">
+                      <i class="el-icon-setting"></i>
+                      <span slot="title">设置</span>
+                    </el-menu-item>
+                  </router-link>
               </el-menu>
             </el-col>
           </el-row>
         </el-aside>
       </div>
       <el-container>
+
         <el-header>
           <div class="back">
             <i class="iconfont icon-tuichu3"></i>
             <router-link to="/" >退出</router-link>
           </div>
         </el-header>
-          <el-main>Main</el-main>
+
+          <el-main>
+            <div class="content">
+              <router-view/>
+            </div>
+          </el-main>
+
           <el-footer>
             <span>Copyright©2023 百日梦想家</span>
           </el-footer>
@@ -69,6 +87,7 @@
     name: 'MyBackEnd',
     data() {
       return {
+        msg: 'This is the MyBackEnd Page',
         activeIndex: '1',
         activeIndex2: '1'
       };
@@ -118,7 +137,12 @@
   .el-main {
     background-color: #fafafa;
     color: #000;
-    margin: .625rem auto;
+    .content{
+      position: relative;
+      height: 100%;
+      padding: 10px 20px;
+      text-align: center;
+    }
   }
 
   .aside {

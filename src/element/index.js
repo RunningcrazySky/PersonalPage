@@ -1,4 +1,4 @@
-import { Container, Header, Aside, Main, Footer, Menu, Button, submenu, MenuItem, MenuItemGroup, Row, Col} from 'element-ui'
+import { Container, Header, Aside, Main, Footer, Menu, Button, submenu, MenuItem, MenuItemGroup, Row, Col, Table,  TableColumn, Pagination, Input, Dialog, Form, FormItem} from 'element-ui'
 
 const element = {
     install: function (Vue) {
@@ -14,6 +14,13 @@ const element = {
         Vue.use(MenuItemGroup)
         Vue.use(Row)
         Vue.use(Col)
+        Vue.use(Table)
+        Vue.use(TableColumn)
+        Vue.use(Pagination)
+        Vue.use(Input)
+        Vue.use(Dialog)
+        Vue.use(Form)
+        Vue.use(FormItem)
     }
   } 
 export default element
