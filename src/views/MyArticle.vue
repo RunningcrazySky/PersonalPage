@@ -10,6 +10,7 @@
         <ArticleHot/>
       </div>
     </div>
+    <Fixedbox/>
     <MyFooter/>
   </div>
 </template>
@@ -20,6 +21,7 @@
   import ArticleTags from '@/components/article/ArticleTags.vue'
   import HomeArticle from '@/components/home/HomeArticle.vue'
   import ArticleHot from '@/components/article/ArticleHot.vue'
+  import Fixedbox from '../components/fixedset/FixedBox.vue'
     export default {
         name:'MyArticle',
         components:{
@@ -27,7 +29,8 @@
           ArticleTags,
           HomeArticle,
           ArticleHot,
-          MyFooter
+          MyFooter,
+          Fixedbox
         }
     }
 </script>

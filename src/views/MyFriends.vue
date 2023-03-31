@@ -10,6 +10,7 @@
         <HomeContacts/>
       </div>
     </div>
+    <Fixedbox/>
     <MyFooter/>
   </div>
 </template>
@@ -19,13 +20,15 @@
   import MyFooter from '@/components/MyFooter'
   import HomeBloger from '@/components/home/HomeBloger'
   import HomeContacts from '@/components/home/HomeContacts'
+  import Fixedbox from '../components/fixedset/FixedBox.vue'
     export default {
         name:'MyFriends',
         components:{
           MyHeader,
           HomeBloger,
           HomeContacts,
-          MyFooter
+          MyFooter,
+          Fixedbox
         }
     }
 </script>

@@ -1,75 +1,77 @@
 <template>
-  <div class="publish">
+  <div class="publish" :model='articleData'>
     <div class="title">
-      <select>
-        <option value="原创">原创</option>
-        <option value="转载">转载</option>
+      <select v-model.trim.lazy="articleData.tags">
+        <option v-for="(val, key) in articleData.options" :key="key" value="原创">{{ val.label }}</option>
       </select>
-      <select>
-        <option value="原创">前端</option>
-        <option value="转载">生活</option>
-      </select>
-      <input type="text" placeholder="标题">
+      <input type="text" placeholder="标题" v-model.trim.lazy="articleData.title">
     </div>
     <!-- markdown文本编辑 -->
-    <div id='md-content' style='z-index:1 !importment'>
-      <textarea name="md-content" id="" cols="30" rows="10" placeholder="博客内容">
-      </textarea>
-    </div>
+        <v-md-editor v-model.trim.lazy="articleData.text" height="40.625rem"></v-md-editor>
     <!-- 提交按钮 -->
-    <button>提 交</button>
+    <button @click="submitArticle">提 交</button>
   </div>
 </template>
 
 <script>
+import { mapMutations, mapState } from 'vuex'
+import {nanoid} from 'nanoid'
 export default {
     name:'BeArticlePub',
+    data(){
+      return{
+        articleData: [
+          {
+            id:nanoid(),
+            tags:'',
+            options:[
+              {value:'1', label:'前端'},
+              {value:'2', label:'生活'},
+            ],
+            title:'',
+            text:''
+          }
+        ], // 批量保存数据
+      }
+    },
+    computed:{
+      ...mapState['article']
+    },
+    methods:{
+      ...mapMutations['addArticle'],
+      submitArticle(){
+        this.addArticle(articleData)
+        console.log(articleData)
+      }
+    }
 }
 </script>
 
 <style lang="less" scoped>
   .publish{
-    margin: 0 auto;
-    text-align: center;
-  }
-  .title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    min-width: 500px;
-    select, input{
-      border: 1px solid gray;
-      font-size: 16px;
-      padding: .3125rem .625rem;
-      box-sizing: border-box;
-      min-height: 30px;
-    }
-    select{
-      border: 1px solid var(--main-font-color);
-      color: var(--main-font-color);
-      cursor: pointer;
-      &:first-child{
-        border-right: 0;
+    min-width: 800px;
+    .title{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      min-width: 500px;
+      select, input{
+        border: 1px solid gray;
+        font-size: 16px;
+        padding: .3125rem .625rem;
+        box-sizing: border-box;
+        min-height: 30px;
       }
-    }
-    input{
-      border-left: 0;
-      width: 100%;
-    }
-  }
-  #md-content{
-    height: 100%;
-    min-width: 500px;
-    border-radius: 5px;
-    textarea{
-      width: 100%;
-      height: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border-radius: 0;
-      min-height: 650px;
-      resize: none;
+      select{
+        border: 1px solid var(--main-font-color);
+        color: var(--main-font-color);
+        cursor: pointer;
+      }
+      input{
+        border-left: 0;
+        width: 100%;
+      }
     }
   }
   

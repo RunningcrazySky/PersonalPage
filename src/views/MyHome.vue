@@ -7,6 +7,12 @@
           <HomeTags/>
           <HomeArticle/>
           <HomeArticle/>
+          <HomeArticle/>
+          <HomeArticle/>
+          <HomeArticle/>
+          <HomeArticle/>
+          <HomeArticle/>
+          <HomeArticle/>
         </div>
         <!-- 侧边栏 -->
         <div class="right">
@@ -14,6 +20,8 @@
           <HomeContacts/>
           <HomeLinks/>
         </div>
+        <!-- 向上和灯光 -->
+        <Fixedbox/>
     </div>
     <MyFooter/>
   </div>
@@ -27,6 +35,7 @@ import HomeArticle from'@/components/home/HomeArticle.vue'
 import HomeLinks from'@/components/home/HomeLinks.vue'
 import HomeBloger from'@/components/home/HomeBloger.vue'
 import HomeContacts from '../components/home/HomeContacts'
+import Fixedbox from '../components/fixedset/FixedBox.vue'
     export default {
       name:'MyHome',
       components:{
@@ -36,7 +45,8 @@ import HomeContacts from '../components/home/HomeContacts'
         HomeArticle,
         HomeLinks,
         HomeBloger,
-        HomeContacts
+        HomeContacts,
+        Fixedbox
       }
     }
 </script>

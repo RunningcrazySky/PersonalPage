@@ -7,6 +7,8 @@ import "@/assets/css/base.css"
 // 引入 iconfont
 import "@/assets/iconfont/iconfont.css";
 import "@/assets/iconfont/iconfont.js";
+// 引入markdown
+import './assets/js/markdown/markdown'
 // 按需引入 elementUI
 import 'element-ui/lib/theme-chalk/index.css'
 import element from './element/index'

@@ -30,14 +30,14 @@
                       <span>文章</span>
                     </template>
                     <el-menu-item-group>
-                      <router-link to="articleall">
-                        <el-menu-item index="2-1">所有文章</el-menu-item>
-                      </router-link>
                       <router-link to="articlepub">
-                        <el-menu-item index="2-2">发表文章</el-menu-item>
+                        <el-menu-item index="2-1">发表文章</el-menu-item>
                       </router-link>
                       <router-link to="articlesort">
-                        <el-menu-item index="2-3">文章分类</el-menu-item>
+                        <el-menu-item index="2-2">文章分类</el-menu-item>
+                      </router-link>
+                      <router-link to="articleall">
+                        <el-menu-item index="2-3">所有文章</el-menu-item>
                       </router-link>
                     </el-menu-item-group>
                   </el-submenu>
@@ -141,7 +141,6 @@
       position: relative;
       height: 100%;
       padding: 10px 20px;
-      text-align: center;
     }
   }
 

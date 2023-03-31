@@ -118,7 +118,7 @@
           text-shadow: 
           -2px -1px 2px var(--white), 
           1px 1px 3px var(--white),
-          2px 1px 1px var(--black);
+          2px 1px 3px var(--black);
         }
       }
     }

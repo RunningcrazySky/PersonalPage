@@ -5,15 +5,23 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        articleTypes: [
-            '前端','生活','three.js'
+        articleList:[
+            {
+                id:'',
+                title:'',
+                tags:'',
+                text:''
+            }
         ],
+        tag:''
     },
     getters: {
 
     },
     mutations: {
-
+        addArticle(state, data){
+            state.articleList = data
+        }
     },
     actions:{
 

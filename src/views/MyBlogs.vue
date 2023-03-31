@@ -9,6 +9,7 @@
                 <ArticleHot/>
             </div>
         </div>
+    <Fixedbox/>
     <MyFooter/>
   </div>
 </template>
@@ -18,6 +19,7 @@ import MyHeader from '@/components/MyHeader'
 import MyFooter from '@/components/MyFooter'
 import ArticleContent from '../components/article/ArticleContent'
 import ArticleHot from '../components/article/ArticleHot'
+import Fixedbox from '../components/fixedset/FixedBox.vue'
 export default {
     name:'MyBlogs',
     components:{
@@ -25,6 +27,7 @@ export default {
         MyFooter,
         ArticleContent,
         ArticleHot,
+        Fixedbox,
     }
 }
 </script>
