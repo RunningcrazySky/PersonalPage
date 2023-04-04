@@ -1,7 +1,7 @@
 <template>
     <div class="HomeBloger">
         <div class="hd">
-            <img src="@/assets/img/profile.jpg" alt="">
+            <img src="@/assets/img/profile.jpg" alt="" class="avatar">
             <div class="info">
                 <router-link to="#">SKY</router-link>
                 <p><i class="iconfont icon-dingwei3"></i>张家口, 中国</p>

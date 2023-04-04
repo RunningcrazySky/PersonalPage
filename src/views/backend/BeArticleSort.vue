@@ -9,21 +9,21 @@
     <el-dialog title="修改分类" :visible.sync="dialogFormVisible" style="text-align:left; min-width: 800px; max-width: 1000px">
         <el-form :model="form">
         <el-form-item label="旧分类" :label-width="formLabelWidth">
-          <el-input :v-model="form.oldSort" disabled autocomplete="off"></el-input>
+          <el-input v-model="form.oldSort" disabled autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="新分类" 
         :label-width="formLabelWidth">
-          <el-input :v-model="form.newSort" autocomplete="off"></el-input>
+          <el-input v-model="form.newSort" autocomplete="off"></el-input>
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button @click="dialogFormVisible = false">取 消</el-button>
-        <el-button type="primary" @click="dialogFormVisible = false">确 定</el-button>
+        <el-button type="primary" @click="handleModalConfirm">确 定</el-button>
       </div>
     </el-dialog>
     <div class="table">
       <el-table
-      :data="convertTableData(tableData)"
+      :data="convertTableData()"
       :header-cell-style="{ textAlign: 'center' }"
       :cell-style="{ textAlign: 'center' }"
       style="width: 100%">
@@ -44,11 +44,11 @@
             <template slot-scope="scope">
               <el-button
                 size="mini"
-                @click="dialogFormVisible = true">编辑</el-button>
+                @click="handleEdit(scope.row)">编辑</el-button>
               <el-button
                 size="mini"
                 type="danger"
-                @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                @click="handleDelete(scope.row)">删除</el-button>
             </template>
           </el-table-column>
       </el-table>
@@ -62,6 +62,7 @@
 import {nanoid} from 'nanoid'
 import dayjs from 'dayjs'
 import Pagination from '@/components/pagination/Pagination.vue'
+import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
 export default {
   name:'BeArticleSort',
   components: { Pagination },
@@ -78,64 +79,71 @@ export default {
       },
       // 弹窗表单
       dialogFormVisible: false,
+      formLabelWidth: '15%',
       form: {
-          oldSort: '',
+          oldSort: '111',
           newSort: '',
       },
-      formLabelWidth: '15%',
-      // 表格数据
-      tableData: [
-        {
-        sort:"前端",
-        count:"0",
-        dateP:"2023-2-2",
-        dateC:"2023-2-2",
-      },
-      ],
       // 搜索框
       search: '',
       // 分页
       pageNum: 1,
-      pageSize: 10
+      pageSize: 10,
+      currentId: ''
     }
   },
+  computed:{
+    ...mapState('sort',['articleSort']),
+    ...mapGetters('sort',['tableData']),
+  },
   methods: {
+    ...mapActions('sort',['addArticleSort', 'editArticleSort','deleteArticleSort', 'getList']),
     // 分页
-    convertTableData(list) {
+    convertTableData() {
       const currentPage = this.pageNum;
       const prevPage = this.pageNum - 1;
-      return list
-        .filter(data => !this.search || data.sort.toLowerCase().includes(this.search.toLowerCase()) || data.dateP.toLowerCase().includes(this.search.toLowerCase()) || data.dateC.toLowerCase().includes(this.search.toLowerCase()))
-        .filter((data, index) =>  index >= prevPage * this.pageSize && index <= currentPage * this.pageSize)
+      return this.tableData
+      .filter(data => !this.search || data.sort.toLowerCase().includes(this.search.toLowerCase()) || data.dateP.toLowerCase().includes(this.search.toLowerCase()) || data.dateC.toLowerCase().includes(this.search.toLowerCase()))
+      .filter((data, index) =>  index >= prevPage * this.pageSize && index <= currentPage * this.pageSize)
     },
     handleTableChange(page) {
       // console.log(page, 'page')
       this.pageNum = page;
     },
+
     // 弹窗编辑功能
-    handleEdit(index, row) {
-      if(this.tableData[index].id === row.id){
-        this.form.oldSort = this.tableData.sort
-      }
+    handleEdit(row) {
+      this.form.oldSort = row.sort;
+      this.currentId = row.id;
+      this.dialogFormVisible = true;
     },
     // 删除功能
-    handleDelete(index, row) {
-      if(this.tableData[index].id === row.id){
-        this.tableData.splice(index, 1)
-      }
+    handleDelete(row) {
+      this.deleteArticleSort(row.id)
     },
+
+    handleModalConfirm() {
+      this.editArticleSort({
+        id: this.currentId,
+        newSort: this.form.newSort
+      })
+
+      this.dialogFormVisible = false
+      this.currentId = '';
+    },
+    
     // 新增分类
     submitSort(){
-      if(this.articleType){
-        this.tableData.unshift({
-          id:nanoid(),
-          sort: this.articleType,
-          count:0,
-          dateP:dayjs().format('YYYY-MM-DD hh:mm'),
-          dateC:dayjs().format('YYYY-MM-DD hh:mm'),
+        if(this.articleType){
+          this.addArticleSort({
+            id:nanoid(),
+            sort: this.articleType,
+            count:10,
+            dateP:dayjs().format('YYYY-MM-DD hh:mm'),
+            dateC:dayjs().format('YYYY-MM-DD hh:mm'),
         })
+        }
         this.articleType = ''
-      }
     }
   },
 }

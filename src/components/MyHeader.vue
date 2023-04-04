@@ -23,7 +23,7 @@
         <!-- 登录弹窗 -->
         <div class="login-box" v-if="loginVisible">
           <form class="login">
-            <input type="text" placeholder="请输入账户" name="account" v-model.trim="username">
+            <input type="text" placeholder="请输入账号" name="account" v-model.trim="username">
             <input type="password" placeholder="请输入密码" name="password"  v-model.trim="password">
             <button >登录</button>
           </form>

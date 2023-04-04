@@ -2,6 +2,7 @@
   <div>
     <MyHeader/>
     <div class="container">
+        <Music/>
         <!-- 主内容区 -->
         <div class="left">
           <HomeTags/>
@@ -28,6 +29,7 @@
 </template>
 
 <script>
+import Music from '@/components/music/Music'
 import MyHeader from '@/components/MyHeader'
 import MyFooter from '@/components/MyFooter'
 import HomeTags from'@/components/home/HomeTags.vue'
@@ -39,6 +41,7 @@ import Fixedbox from '../components/fixedset/FixedBox.vue'
     export default {
       name:'MyHome',
       components:{
+        Music,
         MyHeader,
         MyFooter,
         HomeTags,

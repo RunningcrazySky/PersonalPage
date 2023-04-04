@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4931603",
+      "name": "开始",
+      "font_class": "kaishi",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
       "icon_id": "755612",
       "name": "圆形",
       "font_class": "circle",

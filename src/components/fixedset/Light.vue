@@ -1,12 +1,30 @@
 <template>
-  <div class="light">
-        <i class="iconfont icon-circle"></i>
+  <div class="light " @click="changeBtn">
+    <i class="iconfont icon-circle"></i>
   </div>
 </template>
 
 <script>
 export default {
   name:'Light',
+  data(){
+    return {
+      isLight:true,
+    }
+  },
+  methods:{
+    changeBtn(){
+      this.isLight = ! this.isLight
+      this.lightChange()
+    },
+    lightChange(){
+      if(this.isLight){
+        document.querySelector('html').classList.add('theme-dark')
+      }else{
+        document.querySelector('html').classList.remove('theme-dark')
+      }
+    }
+  }
 }
 </script>
 

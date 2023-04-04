@@ -4,7 +4,7 @@
       <div class="aside">
         <el-aside width="200px">
           <div class="bloger">
-            <img src="@/assets/img/profile.jpg" alt="">
+            <img src="@/assets/img/profile.jpg" alt="" class="avatar">
             <p>百日梦想家</p>
           </div>
           <el-row class="tac">

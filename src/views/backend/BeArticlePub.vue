@@ -34,14 +34,21 @@ export default {
         ], // 批量保存数据
       }
     },
-    computed:{
-      ...mapState['article']
+    mounted() {
+      console.log(this.articleList, 'articleList');
+    },
+    // computed:{
+    //   ...mapState({
+    //     a: state => state.articleList
+    //   })
+    // },
+    computed: {
+      ...mapState('article',['articleList'])
     },
     methods:{
-      ...mapMutations['addArticle'],
+      ...mapMutations(['addArticleList']),
       submitArticle(){
-        this.addArticle(articleData)
-        console.log(articleData)
+        this.addArticleList('articleData')
       }
     }
 }

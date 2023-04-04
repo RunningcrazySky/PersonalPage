@@ -1,5 +1,5 @@
 <template>
-  <div class="up" @click="backTop" v-show="showBtn">
+  <div class="up" @click="backTop" v-if="showBtn">
         <i class="iconfont icon-xiangshang"></i>
   </div>
 </template>
